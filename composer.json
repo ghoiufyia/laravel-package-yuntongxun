@@ -1,0 +1,31 @@
+{
+    "name": "shangning/yuntongxun",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ghoiufyia",
+            "email": "ghoiufyia@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "5.6.*"
+
+    },
+	"autoload": {
+        "psr-4": {
+            "Shangning\\Yuntongxun\\":"src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shangning\\Yuntongxun\\YuntongxunServiceProvider"
+            ],
+            "aliases": {
+                "Yuntongxun": "Shangning\\Yuntongxun\\Facade"
+            }
+        }
+    }
+}
