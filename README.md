@@ -16,7 +16,7 @@ Shangning\Yuntongxun\YuntongxunServiceProvider::class,
 'Yuntongxun' => Shangning\Yuntongxun\Facades\Yuntongxun::class,
 
 发布
-php artisan vendor:publish
+php artisan vendor:publish --provide=Shangning\Yuntongxun\YuntongxunServiceProvider
 
 自动将拷贝配置文件至/config/yuntongxun.php，修改配置。
 
