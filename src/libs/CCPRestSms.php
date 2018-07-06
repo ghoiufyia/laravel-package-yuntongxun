@@ -73,18 +73,18 @@ class CCPRestSms {
      function curl_post($url,$data,$header,$post=1)
      {
        //初始化curl
-       $ch = \curl_init();
+       $ch = curl_init();
        //参数设置  
-       $res= \curl_setopt ($ch, CURLOPT_URL,$url);  
-       \curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-       \curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-       \curl_setopt ($ch, CURLOPT_HEADER, 0);
-       \curl_setopt($ch, CURLOPT_POST, $post);
+       $res= curl_setopt ($ch, CURLOPT_URL,$url);  
+       curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+       curl_setopt ($ch, CURLOPT_HEADER, 0);
+       curl_setopt($ch, CURLOPT_POST, $post);
        if($post)
-          \curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-       \curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-       \curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
-       $result = \curl_exec ($ch);
+          curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+       curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+       curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
+       $result = curl_exec ($ch);
        //连接失败
        if($result == FALSE){
           if($this->BodyType=='json'){
@@ -94,7 +94,7 @@ class CCPRestSms {
           }    
        }
 
-       \curl_close($ch);
+       curl_close($ch);
        return $result;
      } 
 
